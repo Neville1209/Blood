@@ -1,0 +1,476 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
+
+:root {
+  --red: #d7263d;
+  --red-dark: #9b1225;
+  --red-darker: #5e0b17;
+  --pink: #fff1f2;
+  --pink-line: #f6d3d7;
+  --text: #2b2b33;
+  --muted: #6b6b76;
+  --white: #ffffff;
+  --shadow: 0 8px 24px rgba(155, 18, 37, 0.12);
+  --radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, var(--pink) 0%, #ffffff 60%);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}
+
+/* ---------- header ---------- */
+header {
+  background: linear-gradient(135deg, var(--red-darker), var(--red-dark) 55%, var(--red));
+  color: white;
+  text-align: center;
+  padding: 28px 20px 22px;
+}
+
+header h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* ---------- navigation bar (stays at the top when you scroll) ---------- */
+nav {
+  background: rgba(94, 11, 23, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  background: var(--red);
+  transform: translateY(-2px);
+}
+
+/* ---------- hero section (home page) ---------- */
+.hero {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.25), transparent 50%),
+    linear-gradient(135deg, var(--red), var(--red-dark));
+  color: white;
+  text-align: center;
+  padding: 80px 20px 110px;
+  border-radius: 0 0 50% 50% / 0 0 60px 60px;
+}
+
+.hero h2 {
+  font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  max-width: 760px;
+  margin: 0 auto 16px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 620px;
+  margin: 0 auto 30px;
+  opacity: 0.95;
+}
+
+.drop {
+  font-size: 70px;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  background: white;
+  color: var(--red-dark);
+  padding: 14px 36px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.05rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: var(--red-darker);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- main content ---------- */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.hero + .container {
+  margin-top: 20px;
+}
+
+.container h2 {
+  color: var(--red-dark);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 34px 0 14px;
+  padding-left: 14px;
+  border-left: 6px solid var(--red);
+}
+
+.container h2:first-child {
+  margin-top: 0;
+}
+
+.container h3 {
+  color: var(--red);
+  margin-top: 18px;
+}
+
+.container p {
+  margin-bottom: 15px;
+  max-width: 75ch;
+}
+
+/* nice list with red dots */
+.container ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.container ul li {
+  background: white;
+  border: 1px solid var(--pink-line);
+  border-radius: 10px;
+  padding: 10px 14px 10px 44px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.container ul li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--red);
+  border-radius: 50% 50% 50% 0;   /* makes a little blood drop shape */
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* ---------- cards ---------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 24px 0 30px;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-bottom: 5px solid var(--red);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(155, 18, 37, 0.2);
+}
+
+.card h3 {
+  color: var(--red-dark);
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--muted);
+  margin: 0 auto;
+}
+
+.big-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- table ---------- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+th, td {
+  padding: 13px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--pink-line);
+}
+
+th {
+  background: var(--red-dark);
+  color: white;
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) td {
+  background: var(--pink);
+}
+
+tr:hover td {
+  background: #ffe0e4;
+}
+
+td:first-child {
+  font-weight: 800;
+  color: var(--red-dark);
+}
+
+/* ---------- forms ---------- */
+form {
+  background: white;
+  border-radius: var(--radius);
+  padding: 30px;
+  max-width: 640px;
+  margin: 10px auto 20px;
+  box-shadow: var(--shadow);
+  border-top: 6px solid var(--red);
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  font-weight: 700;
+  color: var(--red-darker);
+}
+
+/* the little red star next to required fields */
+.required {
+  color: var(--red);
+  font-weight: 800;
+}
+
+/* small key above a form explaining what the star means */
+.form-key {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: -6px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 11px 14px;
+  margin-top: 6px;
+  border: 2px solid #e6e0e1;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fffafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgba(215, 38, 61, 0.15);
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+  accent-color: var(--red);
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  margin-top: 26px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(155, 18, 37, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(155, 18, 37, 0.4);
+}
+
+/* keyboard users can see where they are */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #ffb3bd;
+  outline-offset: 3px;
+}
+
+/* ---------- notice box ---------- */
+.notice {
+  background: #fff8e1;
+  border-left: 6px solid #f5a623;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+
+/* ---------- footer ---------- */
+footer {
+  background: linear-gradient(135deg, var(--red-darker), var(--red-dark));
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  border-radius: 40px 40px 0 0;
+}
+
+footer p:last-child {
+  opacity: 0.75;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 16px 70px;
+    border-radius: 0 0 40px 40px;
+  }
+  form {
+    padding: 20px;
+  }
+  th, td {
+    padding: 9px 6px;
+    font-size: 0.85rem;
+  }
+}
+
+/* respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- hamburger menu (small screens only) ---------- */
+
+.nav-toggle {
+  display: none; /* hides the actual checkbox */
+}
+
+.hamburger {
+  display: none; /* hidden on big screens, shown in the media query below */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;              /* menu is hidden by default on small screens */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-toggle:checked ~ ul {
+    display: flex;              /* menu appears when the checkbox is ticked */
+  }
+
+  nav ul li a {
+    text-align: center;
+  }
+}
