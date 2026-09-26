@@ -37,7 +37,7 @@ body {
   color: white;
 }
 
-/* ---------- header ---------- */
+
 header {
   background: linear-gradient(135deg, var(--red-darker), var(--red-dark) 55%, var(--red));
   color: white;
@@ -57,7 +57,7 @@ header p {
   font-style: italic;
 }
 
-/* ---------- navigation bar (stays at the top when you scroll) ---------- */
+
 nav {
   background: rgba(94, 11, 23, 0.96);
   position: sticky;
@@ -90,7 +90,6 @@ nav ul li a:hover {
   transform: translateY(-2px);
 }
 
-/* ---------- hero section (home page) ---------- */
 .hero {
   position: relative;
   background:
@@ -129,7 +128,7 @@ nav ul li a:hover {
   50%      { transform: translateY(-10px); }
 }
 
-/* ---------- buttons ---------- */
+
 .btn {
   display: inline-block;
   background: white;
@@ -150,7 +149,7 @@ nav ul li a:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* ---------- main content ---------- */
+
 .container {
   width: 90%;
   max-width: 1000px;
@@ -211,7 +210,7 @@ nav ul li a:hover {
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/* ---------- cards ---------- */
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -257,7 +256,7 @@ nav ul li a:hover {
   color: transparent;
 }
 
-/* ---------- table ---------- */
+
 table {
   width: 100%;
   border-collapse: separate;
@@ -298,7 +297,7 @@ td:first-child {
   color: var(--red-dark);
 }
 
-/* ---------- forms ---------- */
+
 form {
   background: white;
   border-radius: var(--radius);
@@ -316,13 +315,13 @@ label {
   color: var(--red-darker);
 }
 
-/* the little red star next to required fields */
+
 .required {
   color: var(--red);
   font-weight: 800;
 }
 
-/* small key above a form explaining what the star means */
+
 .form-key {
   font-size: 0.9rem;
   color: var(--muted);
@@ -376,13 +375,13 @@ button:hover {
   box-shadow: 0 12px 24px rgba(155, 18, 37, 0.4);
 }
 
-/* keyboard users can see where they are */
+
 a:focus-visible, button:focus-visible {
   outline: 3px solid #ffb3bd;
   outline-offset: 3px;
 }
 
-/* ---------- notice box ---------- */
+
 .notice {
   background: #fff8e1;
   border-left: 6px solid #f5a623;
@@ -391,7 +390,7 @@ a:focus-visible, button:focus-visible {
   margin-bottom: 24px;
 }
 
-/* ---------- footer ---------- */
+
 footer {
   background: linear-gradient(135deg, var(--red-darker), var(--red-dark));
   color: white;
